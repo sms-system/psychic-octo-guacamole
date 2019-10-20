@@ -1,14 +1,12 @@
 module.exports = (tree) => {
-  const treeWalker = (trees) => {
-    const stack = []
-    trees.forEach(node => {
-      buff.push(node.val)
-      stack.push(...node.children)
-    })
-    if (stack.length) { treeWalker(stack) }
+  // return JSON.stringify(tree).match(/\d+/g).map(x => parseInt(x))
+  const treeWalker = (tree) => {
+    buff.push(tree.val)
+    tree.children.forEach(treeWalker)
   }
 
   const buff = []
-  treeWalker([tree])
+  treeWalker(tree)
   return buff
 }
+

@@ -19,20 +19,11 @@ test('basic', () => {
       val: 6,
       children: [{
         val: 1,
-        children: [{
-          val: 4,
-          children: []
-        },{
-          val: 3,
-          children: [{
-            val: 5,
-            children: []
-          }]
-        }]
+        children: []
       }]
     },{
       val: 8,
       children: []
     }]
-  })).toEqual([ 7,2,6,8,4,3,1,5,4,3,5 ])
+  })).toEqual([ 7,2,4,3,5,6,1,8 ])
 })
